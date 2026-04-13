@@ -883,6 +883,10 @@ a.rx-item:active {
     padding-top: var(--space-12);
   }
 
+  .topbar--result {
+    padding: 0 var(--space-16);
+  }
+
   .app-shell--survey {
     padding-top: var(--space-24);
   }

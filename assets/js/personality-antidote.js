@@ -61,23 +61,29 @@ function getTypeName(typeItem, prescriptionItem) {
 }
 
 function bindPageActions(prescriptionItem) {
-  if (!savePrescriptionBtn) {
-    return;
+  if (savePrescriptionBtn) {
+    savePrescriptionBtn.addEventListener('click', async () => {
+      await savePrescription(prescriptionItem, { showFeedback: true });
+    });
+  }
+}
+
+async function savePrescription(prescriptionItem, options = {}) {
+  const { showFeedback = false } = options;
+  const clipboardText = buildPrescriptionClipboardText(
+    prescriptionItem,
+    prescriptionItem.practices || []
+  );
+  const isCopied = await copyTextToClipboard(clipboardText);
+
+  if (showFeedback && savePrescriptionBtn) {
+    savePrescriptionBtn.textContent = isCopied ? '已复制处方' : '保存处方';
+    window.setTimeout(() => {
+      savePrescriptionBtn.textContent = '保存处方';
+    }, 1800);
   }
 
-  savePrescriptionBtn.addEventListener('click', async () => {
-    const defaultLabel = '保存处方';
-    const clipboardText = buildPrescriptionClipboardText(
-      prescriptionItem,
-      prescriptionItem.practices || []
-    );
-    const isCopied = await copyTextToClipboard(clipboardText);
-
-    savePrescriptionBtn.textContent = isCopied ? '已复制处方' : '复制失败';
-    window.setTimeout(() => {
-      savePrescriptionBtn.textContent = defaultLabel;
-    }, 1800);
-  });
+  return isCopied;
 }
 
 function updatePageHead(prescriptionItem, prescriptionDate) {
@@ -273,7 +279,7 @@ function formatPrescriptionDate(date) {
 
 function buildPrescriptionClipboardText(prescriptionItem, practices) {
   const lines = [
-    `开方编号：MDTI-${prescriptionItem.code}`,
+    `处方编号：MDTI-${prescriptionItem.code}`,
     `处方名称：${prescriptionItem.prescriptionName || '临时药方'}`,
     '练习处方：'
   ];
@@ -281,7 +287,7 @@ function buildPrescriptionClipboardText(prescriptionItem, practices) {
   practices.forEach((practice, index) => {
     const practiceOrder = practice.priority || index + 1;
     lines.push(`${practiceOrder}. ${practice.title || '未命名练习'}`);
-    lines.push(`链接：${practice.url || '暂无链接'}`);
+    lines.push(`点击服用：${practice.url || '暂无链接'}`);
   });
 
   return lines.join('\n');

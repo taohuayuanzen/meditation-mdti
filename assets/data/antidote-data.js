@@ -2359,7 +2359,7 @@ window.SBTI_ANTIDOTE_DATA = {
         "SENSE": {
             "code": "SENSE",
             "displayName": "易碎者",
-            "prescriptionName": "脆弱不是废物",
+            "prescriptionName": "敏感不是脆弱",
             "direction": "无助、依赖、自我支持",
             "status": "无助、依赖、脆弱感、自我否定。",
             "sensitive": true,
