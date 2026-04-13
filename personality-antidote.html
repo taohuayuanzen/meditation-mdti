@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>人生解药</title>
+    <meta
+      name="description"
+      content="根据冥想星球·MDTI 人格结果展示对应的人生解药，提供 8 条左右冥想练习。"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="sheet-nav">
+        <div class="sheet-nav-heading">
+          <a class="sheet-nav-back" href="./result.html" aria-label="返回上一页">
+            <span class="sheet-nav-back-icon" aria-hidden="true">←</span>
+          </a>
+          <h1 class="sheet-nav-title">人生解药</h1>
+        </div>
+        <button class="button-ghost" id="savePrescriptionBtn" type="button">保存处方</button>
+      </div>
+
+      <section class="surface prescription-sheet">
+        <header class="sheet-head">
+          <div class="clinic-copy">
+            <h1 id="pageTitle">人生解药</h1>
+            <p class="clinic-note" id="clinicSubtitle">根据你当前的人格状态生成的练习处方。</p>
+          </div>
+          <div class="diagnosis-stamp" aria-hidden="true">已诊断</div>
+        </header>
+
+        <section class="patient-grid" aria-label="人格档案">
+          <div class="info-row">
+            <span class="info-label">人格类型</span>
+            <strong class="info-value" id="prescriptionTitle">正在读取人格结果。</strong>
+          </div>
+          <div class="info-row">
+            <span class="info-label">开方编号</span>
+            <strong class="info-value" id="prescriptionCode">MDTI</strong>
+          </div>
+          <div class="info-row">
+            <span class="info-label">处方名称</span>
+            <strong class="info-value" id="prescriptionName">正在配药方</strong>
+          </div>
+          <div class="info-row">
+            <span class="info-label">调理方向</span>
+            <strong class="info-value" id="prescriptionDirection">调理方向读取中</strong>
+          </div>
+        </section>
+
+        <section class="sheet-section">
+          <h3 class="sheet-title">症状描述</h3>
+          <p class="sheet-paragraph" id="symptomDescription">请稍等，正在读取你的测评结果。</p>
+          <p class="safety-note hidden" id="sensitiveNote">
+            这个结果只用于娱乐和练习推荐，不是心理诊断。若你正处在强烈痛苦、失控或危险状态，请优先联系可信任的人或专业支持。
+          </p>
+        </section>
+
+        <section class="sheet-section">
+          <h3 class="sheet-title">处方说明</h3>
+          <p class="sheet-paragraph" id="instructionLead">正在生成处方说明</p>
+          <ul class="instruction-list" id="instructionList"></ul>
+        </section>
+
+        <section class="sheet-section">
+          <div class="section-head">
+            <div>
+              <!-- <p class="section-kicker">练习处方</p> -->
+              <h3 class="sheet-title">练习处方</h3>
+            </div>
+            <span class="prescription-count" id="practiceCount">0 味</span>
+          </div>
+          <p class="prescription-summary" id="practiceLead">按顺序执行本次处方练习。</p>
+          <div class="rx-list" id="practiceList"></div>
+        </section>
+
+        <footer class="sheet-footer">
+          <p class="sheet-paragraph" id="signatureText">先从第一味开始，今天服用一味就够。</p>
+          <p class="prescription-date" id="prescriptionDate">开方日期：读取中</p>
+          <div class="footer-actions">
+            <a class="button-primary" id="firstPracticeLink" href="./index.html">开始第1个练习</a>
+            <a
+              class="button-ghost"
+              href="http://mk.xinlifm.site/mpus/dptg95e"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              领取7天VIP，解锁全部练习
+            </a>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./assets/data/sbti-questions.js"></script>
+    <script src="./assets/data/sbti-results.js"></script>
+    <script src="./assets/data/sbti-data.js"></script>
+    <script src="./assets/data/antidote-data.js"></script>
+    <script src="./assets/js/personality-antidote.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>冥想星球·MDTI</title>
+    <meta
+      name="description"
+      content="冥想星球·MDTI 测评。测试你的人格，并根据人格结果推荐对应的人生解药。"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell app-shell--survey">
+      <section class="intro-screen" id="introScreen">
+        <div class="card intro-card">
+          <div class="intro-copy">
+            <p class="section-kicker">冥想星球·MDTI</p>
+            <h2>测测你的电子魂魄，再给它配一剂人生解药。</h2>
+            <p class="intro-summary">
+              共 30 道题，约3分钟。
+            </p>
+            <p class="intro-note">本测评仅供娱乐和参考。</p>
+            <div class="intro-actions">
+              <button class="button-primary" id="startBtn" type="button">开始测试</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="test hidden" id="testScreen">
+        <div class="card test-card">
+          <div class="test-progress">
+            <div class="progress-label progress" id="progressText">0 / 30</div>
+            <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+          </div>
+          <div class="test-head">
+            <p class="section-kicker" id="questionMeta">第 1 题</p>
+            <h2 id="questionTitle">题目加载中</h2>
+          </div>
+          <form id="questionForm" class="options"></form>
+          <div class="test-actions">
+            <button class="button-ghost" id="prevBtn" type="button">上一题</button>
+            <button class="button-secondary" id="nextBtn" type="button">下一题</button>
+            <button class="button-primary hidden" id="submitBtn" type="button">查看结果</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/data/sbti-questions.js"></script>
+    <script src="./assets/data/sbti-results.js"></script>
+    <script src="./assets/data/sbti-data.js"></script>
+    <script src="./assets/data/antidote-data.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
