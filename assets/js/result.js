@@ -6,8 +6,7 @@
  * - 渲染结果页内容
  * - 绑定结果页操作按钮
  */
-const RESULT_STORAGE_KEY = 'meditation-planet-sbti-result';
-const RESULT_SNAPSHOT_VERSION = 1;
+const resultStorage = window.MEDITATION_PLANET_RESULT_STORAGE;
 const VIP_LINK = 'http://mk.xinlifm.site/mpus/dptg95e';
 const sbtiData = window.MEDITATION_PLANET_SBTI;
 const antidoteData = window.SBTI_ANTIDOTE_DATA?.prescriptions || {};
@@ -36,17 +35,7 @@ if (!resultSnapshot) {
  * @returns {object | null} 结果快照
  */
 function readResultSnapshot() {
-  const rawSnapshot = sessionStorage.getItem(RESULT_STORAGE_KEY);
-  if (!rawSnapshot) {
-    return null;
-  }
-
-  try {
-    const parsedSnapshot = JSON.parse(rawSnapshot);
-    return isValidResultSnapshot(parsedSnapshot) ? parsedSnapshot : null;
-  } catch (error) {
-    return null;
-  }
+  return resultStorage.readPreferredResultSnapshot();
 }
 
 /**
@@ -55,17 +44,7 @@ function readResultSnapshot() {
  * @returns {boolean} 是否有效
  */
 function isValidResultSnapshot(snapshot) {
-  return Boolean(
-    snapshot &&
-      snapshot.version === RESULT_SNAPSHOT_VERSION &&
-      snapshot.finalType?.code &&
-      snapshot.finalType?.displayName &&
-      snapshot.finalType?.intro &&
-      snapshot.finalType?.desc &&
-      snapshot.mode &&
-      snapshot.badge &&
-      snapshot.levels
-  );
+  return resultStorage.isValidResultSnapshot(snapshot);
 }
 
 /**
@@ -236,7 +215,7 @@ function redirectToAntidote(typeCode) {
  * 清理结果快照。
  */
 function clearResultSnapshot() {
-  sessionStorage.removeItem(RESULT_STORAGE_KEY);
+  resultStorage.clearCurrentResultSnapshot();
 }
 
 /**

@@ -6,8 +6,7 @@
  * - 收集用户答案并计算结果
  * - 写入结果快照并跳转结果页
  */
-const RESULT_STORAGE_KEY = 'meditation-planet-sbti-result';
-const RESULT_SNAPSHOT_VERSION = 1;
+const resultStorage = window.MEDITATION_PLANET_RESULT_STORAGE;
 const sbtiData = window.MEDITATION_PLANET_SBTI;
 const dimensionMeta = sbtiData.dimensionMeta;
 const dimensionOrder = sbtiData.dimensionOrder;
@@ -379,7 +378,7 @@ function buildFallbackResult(bestType, levels) {
  */
 function saveResultSnapshot(result) {
   const resultSnapshot = {
-    version: RESULT_SNAPSHOT_VERSION,
+    version: resultStorage.RESULT_SNAPSHOT_VERSION,
     createdAt: Date.now(),
     finalType: result.finalType,
     mode: result.mode,
@@ -387,14 +386,15 @@ function saveResultSnapshot(result) {
     levels: result.levels
   };
 
-  sessionStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(resultSnapshot));
+  resultStorage.writeCurrentResultSnapshot(resultSnapshot);
+  resultStorage.writeLatestResultSnapshot(resultSnapshot);
 }
 
 /**
  * 清理旧结果快照，避免重复测试串结果。
  */
 function clearResultSnapshot() {
-  sessionStorage.removeItem(RESULT_STORAGE_KEY);
+  resultStorage.clearCurrentResultSnapshot();
 }
 
 /**

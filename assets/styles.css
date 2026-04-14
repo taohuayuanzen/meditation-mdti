@@ -233,6 +233,24 @@ button:disabled {
   width: 100%;
 }
 
+.intro-secondary-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-8);
+}
+
+.intro-recent-link {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.intro-recent-link:hover {
+  text-decoration: underline;
+}
+
 .test-head {
   margin-bottom: var(--space-24);
 }

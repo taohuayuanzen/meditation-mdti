@@ -86,10 +86,10 @@ async function savePrescription(prescriptionItem, options = {}) {
   const isCopied = await copyTextToClipboard(clipboardText);
 
   if (showFeedback && savePrescriptionBtn) {
-    savePrescriptionBtn.textContent = isCopied ? '√ 已复制处方' : '保存处方';
+    savePrescriptionBtn.textContent = isCopied ? '已成功复制' : '复制处方';
     window.setTimeout(() => {
-      savePrescriptionBtn.textContent = '保存处方';
-    }, 1800);
+      savePrescriptionBtn.textContent = '复制处方';
+    }, 3000);
   }
 
   return isCopied;
