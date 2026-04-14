@@ -12,6 +12,7 @@ const prescriptions = window.SBTI_ANTIDOTE_DATA?.prescriptions || {};
 const params = new URLSearchParams(window.location.search);
 const requestedType = params.get('type') || 'FREE';
 const savePrescriptionBtn = document.getElementById('savePrescriptionBtn');
+const savePrescriptionVipLine = '领7天VIP，解锁全部练习：http://mk.xinlifm.site/mpus/dptg95e';
 const fallbackPrescription = {
   code: requestedType,
   displayName: '未知人格',
@@ -63,17 +64,25 @@ function getTypeName(typeItem, prescriptionItem) {
 function bindPageActions(prescriptionItem) {
   if (savePrescriptionBtn) {
     savePrescriptionBtn.addEventListener('click', async () => {
-      await savePrescription(prescriptionItem, { showFeedback: true });
+      await savePrescription(prescriptionItem, {
+        showFeedback: true,
+        appendLine: savePrescriptionVipLine
+      });
     });
   }
 }
 
 async function savePrescription(prescriptionItem, options = {}) {
-  const { showFeedback = false } = options;
-  const clipboardText = buildPrescriptionClipboardText(
+  const { showFeedback = false, appendLine = '' } = options;
+  let clipboardText = buildPrescriptionClipboardText(
     prescriptionItem,
     prescriptionItem.practices || []
   );
+
+  if (appendLine) {
+    clipboardText = `${clipboardText}\n${appendLine}`;
+  }
+
   const isCopied = await copyTextToClipboard(clipboardText);
 
   if (showFeedback && savePrescriptionBtn) {
