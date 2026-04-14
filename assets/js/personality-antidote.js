@@ -97,9 +97,9 @@ async function savePrescription(prescriptionItem, options = {}) {
 
 function updatePageHead(prescriptionItem, prescriptionDate) {
   document.title = `人生解药｜${prescriptionItem.code}`;
-  document.getElementById('pageTitle').textContent = '处方单';
+  document.getElementById('pageTitle').textContent = '灵魂处方单';
   document.getElementById('clinicSubtitle').textContent =
-    `这是为你准备的练习处方。`;
+    `给你的电子魂魄，配一剂人生解药。`;
   document.getElementById('prescriptionDate').textContent = `开方日期：${prescriptionDate}`;
 }
 

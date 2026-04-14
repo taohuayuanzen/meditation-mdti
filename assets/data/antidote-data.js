@@ -9,7 +9,7 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "拿捏者",
             "prescriptionName": "松开方向盘",
             "direction": "控制感、责任压力、身体放松",
-            "status": "控制感过载、责任压力、计划和秩序感太紧。",
+            "status": "控制感过载、计划和秩序感太紧。",
             "sensitive": false,
             "practices": [
                 {
@@ -107,7 +107,7 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "送钱者",
             "prescriptionName": "给自己留一份",
             "direction": "讨好、边界、过度付出",
-            "status": "过度付出、讨好、边界不足、总是替别人兜底。",
+            "status": "过度付出、边界不足、替别人兜底。",
             "sensitive": false,
             "practices": [
                 {
@@ -205,8 +205,8 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "逆袭者",
             "prescriptionName": "把自嘲还给风",
             "direction": "自我价值、羞耻松绑",
-            "status": "自嘲、自卑、羞耻感、自我价值修复。",
-            "sensitive": false,
+            "status": "自嘲、羞耻感、自我价值修复。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -499,8 +499,8 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "哦不人",
             "prescriptionName": "哦不之后先呼吸",
             "direction": "焦虑、惊慌、灾难化想象",
-            "status": "惊慌、自责、风险预演、灾难化想象。",
-            "sensitive": false,
+            "status": "惊慌、风险预演、灾难化想象。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -1087,8 +1087,8 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "无所谓人",
             "prescriptionName": "随便里找一点方向",
             "direction": "低动机、意义感、微目标",
-            "status": "低动机、意义感模糊、什么都行但不太启动。",
-            "sensitive": false,
+            "status": "意义感模糊、什么都行但不太启动。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -1185,7 +1185,7 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "吗喽",
             "prescriptionName": "副本暂停",
             "direction": "打工疲惫、恢复活力",
-            "status": "打工疲惫、身体想逃、需要从副本里暂停。",
+            "status": "打工疲惫、身体想逃、从副本里暂停。",
             "sensitive": false,
             "practices": [
                 {
@@ -1283,8 +1283,8 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "小丑",
             "prescriptionName": "小丑也需要拥抱",
             "direction": "自嘲防御、情绪容器",
-            "status": "自嘲防御、用笑声盖住心碎、情绪需要容器。",
-            "sensitive": false,
+            "status": "用笑声盖住心碎、情绪需要容器。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -1381,8 +1381,8 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "WOC 人",
             "prescriptionName": "先稳住",
             "direction": "应激、冲动暂停",
-            "status": "情绪爆发、惊呼、应激、冲动暂停。",
-            "sensitive": false,
+            "status": "情绪化、应激、冲动暂停。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -1576,9 +1576,9 @@ window.SBTI_ANTIDOTE_DATA = {
             "code": "SANE",
             "displayName": "愤世者",
             "prescriptionName": "把火放回胸口",
-            "direction": "愤怒、失望、防御",
-            "status": "愤怒、失望、嘴上厌世但仍然承担。",
-            "sensitive": false,
+            "direction": "淡淡的悲伤、防御",
+            "status": "淡淡的悲伤、嘴上厌世但仍然承担。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -1675,7 +1675,7 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "装死者",
             "prescriptionName": "醒一小会儿",
             "direction": "睡眠修复、低能量",
-            "status": "睡眠、逃避、低能量、需要温和唤醒。",
+            "status": "睡眠、低能量、需要温和唤醒。",
             "sensitive": false,
             "practices": [
                 {
@@ -1774,7 +1774,7 @@ window.SBTI_ANTIDOTE_DATA = {
             "prescriptionName": "够用感练习",
             "direction": "匮乏焦虑、安全感",
             "status": "匮乏焦虑、安全感不足、资源紧绷。",
-            "sensitive": false,
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -1969,8 +1969,8 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "天真者",
             "prescriptionName": "不再骂自己",
             "direction": "自责、自我慈悲",
-            "status": "自责、内心戏、自我羞辱、判断恐惧。",
-            "sensitive": false,
+            "status": "自责、内心戏、判断恐惧。",
+            "sensitive": true,
             "practices": [
                 {
                     "priority": 1,
@@ -2165,7 +2165,7 @@ window.SBTI_ANTIDOTE_DATA = {
             "displayName": "野草者",
             "prescriptionName": "野草的方向",
             "direction": "冲动、力量、身体释放",
-            "status": "冲动、叛逆、生命力强但无处安放。",
+            "status": "冲动、生命力强但无处安放。",
             "sensitive": false,
             "practices": [
                 {
